@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Transaksi extends javax.swing.JFrame {
     
-    private final TransaksiController ctrl;
+    private TransaksiController ctrl;
 
     DefaultTableModel model;
     PreparedStatement pst = null;
@@ -466,7 +466,6 @@ public class Transaksi extends javax.swing.JFrame {
     private void btn_tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahActionPerformed
 
         ctrl.tambah();
-        
     }//GEN-LAST:event_btn_tambahActionPerformed
 
     private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
@@ -575,7 +574,7 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JTable tabel;
     // End of variables declaration//GEN-END:variables
 
-    public final void tampilkan() {
+    public void tampilkan() {
 
         int row = tabel.getRowCount();
         for (int a = 0; a < row; a++) {

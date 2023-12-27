@@ -13,24 +13,14 @@ import java.sql.ResultSet;
  * @author reyyo
  */
 public class Login extends javax.swing.JFrame {
-    int xx, xy;
-    
-    Connection con = null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
-    
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
-        con = (Connection) db.mycon();
     }
     
-    void bersih(){
-        jnama.setText("masukkan nama lengkap");
-        jsandi.setText("masukkan sandi");
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -221,14 +211,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseClicked
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
-        xx = evt.getX();
-        xy = evt.getY();
+       
     }//GEN-LAST:event_formMousePressed
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - xx, y - xy);
+       
     }//GEN-LAST:event_formMouseDragged
 
     private void jnamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnamaActionPerformed
@@ -240,45 +227,23 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jsandiActionPerformed
 
     private void btn_masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukActionPerformed
-        // login code here
         
-        String un = jnama.getText();
-        String ps = jsandi.getName();
-        
-        try{
-            String sql = "SELECT * FROM user WHERE nama_pengguna =? AND kata_sandi =?";
-            pst = con.prepareCall(sql);
-        }catch (Exception e){
-            
-        }
     }//GEN-LAST:event_btn_masukActionPerformed
 
     private void jnamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamaFocusGained
-        String nama_pengguna = jnama.getText();
-        if(nama_pengguna.equals("masukkan nama lengkap")){
-            jnama.setText("");
-        }
+       
     }//GEN-LAST:event_jnamaFocusGained
 
     private void jsandiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusGained
-        String kata_sandi = jsandi.getText();
-        if(kata_sandi.equals("masukkan sandi")){
-            jsandi.setText("");
-        }
+        
     }//GEN-LAST:event_jsandiFocusGained
 
     private void jnamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamaFocusLost
-//        String nama_pengguna = namaPengguna.getText();
-//        if(nama_pengguna.equals("")||("masukkan nama lengkap")){
-//            namaPengguna.setText("masukkan nama penggun");
-//        }
+
     }//GEN-LAST:event_jnamaFocusLost
 
     private void jsandiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusLost
-//        String kata_sandi = kataSandi.getText();
-//        if(kata_sandi.equals("")||("masukkan sandi")){
-//            kataSandi.setText("masukkan nama penggun");
-//        }
+
     }//GEN-LAST:event_jsandiFocusLost
 
     /**

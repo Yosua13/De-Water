@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import tubes_pbo.Transaksi;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -25,22 +26,22 @@ public class TransaksiController {
         this.trans = trans;
     }
 
-    public void tambah() {
+    public void tambah(){
         try {
             // TODO add your handling code here:
-            String jenis_air = trans.getJenisAir().getText();
-            String nama_produk = trans.getNamaProduk().getText();
             String kode_produk = trans.getKode().getText();
+            String nama_produk = trans.getNamaProduk().getText();
+            String jenis_air = trans.getJenisAir().getText();
             String harga = trans.getHarga().getText();
             String jumlah = trans.getJumlah().getText();
             String metode_pengambilan = trans.getMetode().getText();
 
             // Check if any of the fields is empty
-            if (jenis_air.isEmpty() || nama_produk.isEmpty() || kode_produk.isEmpty() || harga.isEmpty() || jumlah.isEmpty() || metode_pengambilan.isEmpty()) {
+            if (kode_produk.isEmpty() || nama_produk.isEmpty() || jenis_air.isEmpty() || harga.isEmpty() || jumlah.isEmpty() || metode_pengambilan.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Semua kolom harus diisi!");
             } else {
                 Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tubes_pbo", "root", "");
-                cn.createStatement().executeUpdate("INSERT INTO produk VALUES" + "('" + jenis_air + "','" + nama_produk + "','" + kode_produk + "','" + harga + "','" + jumlah + "','" + metode_pengambilan + "')");
+                cn.createStatement().executeUpdate("INSERT INTO produk VALUES" + "('" + kode_produk + "','" + nama_produk + "','" + jenis_air + "','" + harga + "','" + jumlah + "','" + metode_pengambilan + "')");
                 trans.tampilkan();
                 reset();
             }
@@ -104,20 +105,19 @@ public class TransaksiController {
     }
 
     public void hapus() {
-        try {
-            // TODO add your handling code here:
-            String kode_produk = trans.getKode().getText();
+    try {
+        // TODO add your handling code here:
+        String kode_produk = trans.getKode().getText();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tubes_pbo", "root", "");
-            cn.createStatement().executeUpdate("DELETE FROM produk WHERE kode_produk = '" + kode_produk + "'");
-            trans.tampilkan();
-            reset();
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tubes_pbo", "root", "");
+        cn.createStatement().executeUpdate("DELETE FROM produk WHERE kode_produk = '" + kode_produk + "'");
+        trans.tampilkan();
+        reset();
 
-        } catch (SQLException ex) {
-            Logger.getLogger(Transaksi.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
+    } catch (SQLException ex) {
+        Logger.getLogger(Transaksi.class.getName()).log(Level.SEVERE, null, ex);
     }
+}
     
-    
+
 }
