@@ -10,10 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Transaksi extends javax.swing.JFrame {
     
-    private TransaksiController ctrl;
+    private final TransaksiController ctrl;
 
     DefaultTableModel model;
     PreparedStatement pst = null;
@@ -32,7 +30,7 @@ public class Transaksi extends javax.swing.JFrame {
         ctrl = new TransaksiController(this);
         initComponents();
 
-        String[] judul = {"Kode Produk", "Nama Produk", "Jenis Air", "Harga", "Jumlah", "Metode Pengambilan"};
+        String[] judul = {"Jenis Air", "Nama Produk", "Kode Produk",  "Harga", "Jumlah", "Metode Pengambilan"};
         model = new DefaultTableModel(judul, 0);
         tabel.setModel(model);
         tampilkan();
@@ -40,13 +38,13 @@ public class Transaksi extends javax.swing.JFrame {
     }
     
     public JTextField getKode() {
-        return jkode_produk;
+        return jjenis_air;
     }
     public JTextField getNamaProduk() {
         return jnama_produk;
     }
     public JTextField getJenisAir() {
-        return jjenis_air;
+        return jkode_produk;
     }
     public JTextField getHarga() {
         return jharga;
@@ -78,10 +76,10 @@ public class Transaksi extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jkode_produk = new javax.swing.JTextField();
+        jjenis_air = new javax.swing.JTextField();
         jnama_produk = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jjenis_air = new javax.swing.JTextField();
+        jkode_produk = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jharga = new javax.swing.JTextField();
@@ -167,12 +165,12 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel7.setText("Lakukan Pemesanan Di Sini");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Kode Produk");
+        jLabel8.setText("Jenis Air");
 
-        jkode_produk.setText("kode produk");
-        jkode_produk.addActionListener(new java.awt.event.ActionListener() {
+        jjenis_air.setText("jenis air");
+        jjenis_air.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jkode_produkActionPerformed(evt);
+                jjenis_airActionPerformed(evt);
             }
         });
 
@@ -186,15 +184,15 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setText("Nama Produk");
 
-        jjenis_air.setText("jenis air");
-        jjenis_air.addActionListener(new java.awt.event.ActionListener() {
+        jkode_produk.setText("kode produk");
+        jkode_produk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jjenis_airActionPerformed(evt);
+                jkode_produkActionPerformed(evt);
             }
         });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Jenis Air");
+        jLabel10.setText("Kode Produk");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setText("Harga");
@@ -275,10 +273,10 @@ public class Transaksi extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(jkode_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jjenis_air, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jnama_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jjenis_air, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jkode_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11)
                     .addComponent(jharga, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,7 +303,7 @@ public class Transaksi extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jkode_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jjenis_air, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -313,7 +311,7 @@ public class Transaksi extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jjenis_air, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jkode_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -441,17 +439,17 @@ public class Transaksi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jkode_produkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jkode_produkActionPerformed
+    private void jjenis_airActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jjenis_airActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jkode_produkActionPerformed
+    }//GEN-LAST:event_jjenis_airActionPerformed
 
     private void jnama_produkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnama_produkActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jnama_produkActionPerformed
 
-    private void jjenis_airActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jjenis_airActionPerformed
+    private void jkode_produkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jkode_produkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jjenis_airActionPerformed
+    }//GEN-LAST:event_jkode_produkActionPerformed
 
     private void jhargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jhargaActionPerformed
         // TODO add your handling code here:
@@ -472,32 +470,16 @@ public class Transaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_tambahActionPerformed
 
     private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
-        try {
-            // TODO add your handling code here:
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tubes_pbo", "root", "");
-            cn.createStatement().executeUpdate("UPDATE produk SET kode_produk= '" + jkode_produk.getText() + "', nama_produk = '" + jnama_produk.getText() + "', jenis_air = '" + jjenis_air.getText() + "', harga = '" + jharga.getText() + "', jumlah = '" + jjumlah.getText() + "', metode_pengambilan = '" + jmetode.getText()  + "' WHERE kode_produk = '" + jkode_produk.getText() + "'");
-            tampilkan();
-            reset();
-        } catch (SQLException ex) {
-            Logger.getLogger(Transaksi.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ctrl.edit();
     }//GEN-LAST:event_btn_editActionPerformed
 
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
-        try {
-            // TODO add your handling code here:
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tubes_pbo", "root", "");
-            cn.createStatement().executeUpdate("DELETE FROM produk WHERE kode_produk = '" + jkode_produk.getText() + "'");
-            tampilkan();
-            reset();
-        } catch (SQLException ex) {
-            Logger.getLogger(Transaksi.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ctrl.hapus();
     }//GEN-LAST:event_btn_hapusActionPerformed
 
     private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
         // TODO add your handling code here:
-        reset();
+        ctrl.reset();
     }//GEN-LAST:event_btn_resetActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -512,23 +494,15 @@ public class Transaksi extends javax.swing.JFrame {
         int i = tabel.getSelectedRow();
 
         if (i > -1) {
-            jkode_produk.setText(model.getValueAt(i, 0).toString());
+            jjenis_air.setText(model.getValueAt(i, 0).toString());
             jnama_produk.setText(model.getValueAt(i, 1).toString());
-            jjenis_air.setText(model.getValueAt(i, 2).toString());
+            jkode_produk.setText(model.getValueAt(i, 2).toString());
             jharga.setText(model.getValueAt(i, 3).toString());
             jjumlah.setText(model.getValueAt(i, 4).toString());
             jmetode.setText(model.getValueAt(i, 5).toString());
         }
     }//GEN-LAST:event_tabelMouseClicked
 
-    public void reset() {
-        jkode_produk.setText("");
-        jnama_produk.setText("");
-        jjenis_air.setText("");
-        jharga.setText("");
-        jjumlah.setText("");
-        jmetode.setText("");
-    }
 
     /**
      * @param args the command line arguments
@@ -601,7 +575,7 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JTable tabel;
     // End of variables declaration//GEN-END:variables
 
-    public void tampilkan() {
+    public final void tampilkan() {
 
         int row = tabel.getRowCount();
         for (int a = 0; a < row; a++) {

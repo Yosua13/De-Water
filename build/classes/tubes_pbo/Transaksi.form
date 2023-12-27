@@ -230,10 +230,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <Component id="jkode_produk" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
+                          <Component id="jjenis_air" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
                           <Component id="jnama_produk" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          <Component id="jjenis_air" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
+                          <Component id="jkode_produk" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <Component id="jharga" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
@@ -264,7 +264,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jkode_produk" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jjenis_air" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -272,7 +272,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jjenis_air" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jkode_produk" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -311,15 +311,15 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Kode Produk"/>
+                <Property name="text" type="java.lang.String" value="Jenis Air"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jkode_produk">
+            <Component class="javax.swing.JTextField" name="jjenis_air">
               <Properties>
-                <Property name="text" type="java.lang.String" value="kode produk"/>
+                <Property name="text" type="java.lang.String" value="jenis air"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jkode_produkActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jjenis_airActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jnama_produk">
@@ -338,12 +338,12 @@
                 <Property name="text" type="java.lang.String" value="Nama Produk"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jjenis_air">
+            <Component class="javax.swing.JTextField" name="jkode_produk">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jenis air"/>
+                <Property name="text" type="java.lang.String" value="kode produk"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jjenis_airActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jkode_produkActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
@@ -351,7 +351,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Jenis Air"/>
+                <Property name="text" type="java.lang.String" value="Kode Produk"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
