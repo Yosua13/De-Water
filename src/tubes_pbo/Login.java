@@ -4,21 +4,29 @@
  */
 package tubes_pbo;
 
-import com.sun.jdi.connect.spi.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import controller.UserController;
+import javax.swing.JTextField;
+
 
 /**
  *
  * @author reyyo
  */
 public class Login extends javax.swing.JFrame {
-
+    private UserController userController;
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        userController = new UserController(null, this, null);
+    }
+    
+    public JTextField getEmail(){
+        return jemail;
+    }
+    public JTextField getKataSandi(){
+        return jsandi;
     }
     
 
@@ -37,11 +45,11 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jnama = new javax.swing.JTextField();
+        jemail = new javax.swing.JTextField();
         jsandi = new javax.swing.JTextField();
         btn_masuk = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,22 +78,22 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Hi, Selamat Datang!");
 
-        jLabel4.setText("Nama Pengguna");
+        jLabel4.setText("Email");
 
         jLabel5.setText("Kata Sandi");
 
-        jnama.setText("masukkan nama pengguna");
-        jnama.addFocusListener(new java.awt.event.FocusAdapter() {
+        jemail.setText("masukkan email");
+        jemail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jnamaFocusGained(evt);
+                jemailFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jnamaFocusLost(evt);
+                jemailFocusLost(evt);
             }
         });
-        jnama.addActionListener(new java.awt.event.ActionListener() {
+        jemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jnamaActionPerformed(evt);
+                jemailActionPerformed(evt);
             }
         });
 
@@ -113,15 +121,31 @@ public class Login extends javax.swing.JFrame {
 
         jLabel6.setText("Belum Punya Akun?");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel7.setText("Daftar");
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 204));
+        jButton1.setText("Daftar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btn_masuk, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
+                .addGap(0, 95, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -132,20 +156,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(jnama, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(jemail, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
                             .addComponent(jsandi))
                         .addGap(38, 38, 38))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btn_masuk, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)))
-                .addGap(0, 131, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +170,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jnama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jemail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -167,7 +180,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(jButton1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -218,9 +231,9 @@ public class Login extends javax.swing.JFrame {
        
     }//GEN-LAST:event_formMouseDragged
 
-    private void jnamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnamaActionPerformed
+    private void jemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jnamaActionPerformed
+    }//GEN-LAST:event_jemailActionPerformed
 
     private void jsandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jsandiActionPerformed
         // TODO add your handling code here:
@@ -230,21 +243,25 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_masukActionPerformed
 
-    private void jnamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamaFocusGained
+    private void jemailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jemailFocusGained
        
-    }//GEN-LAST:event_jnamaFocusGained
+    }//GEN-LAST:event_jemailFocusGained
 
     private void jsandiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusGained
         
     }//GEN-LAST:event_jsandiFocusGained
 
-    private void jnamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamaFocusLost
+    private void jemailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jemailFocusLost
 
-    }//GEN-LAST:event_jnamaFocusLost
+    }//GEN-LAST:event_jemailFocusLost
 
     private void jsandiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusLost
 
     }//GEN-LAST:event_jsandiFocusLost
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,16 +300,16 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_masuk;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jnama;
+    private javax.swing.JTextField jemail;
     private javax.swing.JTextField jsandi;
     // End of variables declaration//GEN-END:variables
 }

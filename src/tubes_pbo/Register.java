@@ -4,17 +4,38 @@
  */
 package tubes_pbo;
 
+import controller.UserController;
+import javax.swing.JTextField;
+
 /**
  *
  * @author reyyo
  */
 public class Register extends javax.swing.JFrame {
+    private UserController userController;
 
     /**
      * Creates new form Register
      */
     public Register() {
         initComponents();
+        userController = new UserController(this, null, null);
+    }
+    
+    public JTextField getNamaLengkap(){
+        return jnamalengkap;
+    }
+    public JTextField getEmail(){
+        return jemail;
+    }
+    public JTextField getNomorHP(){
+        return jphone;
+    }
+    public JTextField getAlamat(){
+        return jalamat;
+    }
+    public JTextField getSandi(){
+        return jsandi;
     }
 
     /**
@@ -33,18 +54,16 @@ public class Register extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jnamalengkap = new javax.swing.JTextField();
-        jnama = new javax.swing.JTextField();
+        jemail = new javax.swing.JTextField();
         btn_daftar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jphone = new javax.swing.JTextField();
         jalamat = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jsandi = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jsandi2 = new javax.swing.JTextField();
+        jsandi = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,7 +80,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel4.setText("Nama Lengkap");
 
-        jLabel5.setText("Nama Pengguna");
+        jLabel5.setText("Email");
 
         jnamalengkap.setText("masukkan nama lengkap");
         jnamalengkap.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -78,18 +97,18 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        jnama.setText("masukkan nama pengguna");
-        jnama.addFocusListener(new java.awt.event.FocusAdapter() {
+        jemail.setText("masukkan email");
+        jemail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jnamaFocusGained(evt);
+                jemailFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jnamaFocusLost(evt);
+                jemailFocusLost(evt);
             }
         });
-        jnama.addActionListener(new java.awt.event.ActionListener() {
+        jemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jnamaActionPerformed(evt);
+                jemailActionPerformed(evt);
             }
         });
 
@@ -101,10 +120,6 @@ public class Register extends javax.swing.JFrame {
         });
 
         jLabel6.setText("Belum Punya Akun?");
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel7.setText("Masuk");
 
         jLabel14.setText("Nomor Handphone");
 
@@ -142,35 +157,14 @@ public class Register extends javax.swing.JFrame {
 
         jLabel16.setText("Kata Sandi");
 
-        jsandi.setText("masukkan sandi");
-        jsandi.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jsandiFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jsandiFocusLost(evt);
-            }
-        });
-        jsandi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jsandiActionPerformed(evt);
-            }
-        });
+        jsandi.setText("jPasswordField1");
 
-        jLabel17.setText("Ulangi Kata Sandi");
-
-        jsandi2.setText("masukkan sandi");
-        jsandi2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jsandi2FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jsandi2FocusLost(evt);
-            }
-        });
-        jsandi2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 204));
+        jButton1.setText("Masuk");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jsandi2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -178,38 +172,39 @@ public class Register extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(157, 157, 157))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jnamalengkap, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                            .addComponent(jnama)
-                            .addComponent(jLabel14)
-                            .addComponent(jphone)
-                            .addComponent(jalamat)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16)
-                            .addComponent(jsandi)
-                            .addComponent(jLabel17)
-                            .addComponent(jsandi2))
-                        .addGap(38, 38, 38))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(btn_daftar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)))
-                        .addGap(129, 129, 129))))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(157, 157, 157))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel5)
+                                .addComponent(jnamalengkap, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                                .addComponent(jemail)
+                                .addComponent(jLabel14)
+                                .addComponent(jphone)
+                                .addComponent(jalamat)
+                                .addComponent(jLabel15)
+                                .addComponent(jLabel16))
+                            .addGap(38, 38, 38))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(74, 74, 74)
+                            .addComponent(jLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton1)
+                            .addContainerGap()))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jsandi, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(btn_daftar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,7 +220,7 @@ public class Register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jnama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jemail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,17 +233,13 @@ public class Register extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jsandi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jsandi2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(15, 15, 15)
                 .addComponent(btn_daftar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tubes_pbo/img/D'water.png"))); // NOI18N
@@ -287,43 +278,32 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jnamalengkapFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamalengkapFocusGained
-        String nama_pengguna = jnamalengkap.getText();
-        if(nama_pengguna.equals("masukkan nama lengkap")){
-            jnamalengkap.setText("");
-        }
+
     }//GEN-LAST:event_jnamalengkapFocusGained
 
     private void jnamalengkapFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamalengkapFocusLost
-        //        String nama_pengguna = namaPengguna.getText();
-        //        if(nama_pengguna.equals("")||("masukkan nama lengkap")){
-            //            namaPengguna.setText("masukkan nama penggun");
-            //        }
+
     }//GEN-LAST:event_jnamalengkapFocusLost
 
     private void jnamalengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnamalengkapActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jnamalengkapActionPerformed
 
-    private void jnamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamaFocusGained
-        String kata_sandi = jnama.getText();
-        if(kata_sandi.equals("masukkan sandi")){
-            jnama.setText("");
-        }
-    }//GEN-LAST:event_jnamaFocusGained
+    private void jemailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jemailFocusGained
 
-    private void jnamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamaFocusLost
-        //        String kata_sandi = kataSandi.getText();
-        //        if(kata_sandi.equals("")||("masukkan sandi")){
-            //            kataSandi.setText("masukkan nama penggun");
-            //        }
-    }//GEN-LAST:event_jnamaFocusLost
+    }//GEN-LAST:event_jemailFocusGained
 
-    private void jnamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnamaActionPerformed
+    private void jemailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jemailFocusLost
+
+    }//GEN-LAST:event_jemailFocusLost
+
+    private void jemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jnamaActionPerformed
+    }//GEN-LAST:event_jemailActionPerformed
 
     private void btn_daftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_daftarActionPerformed
-        // TODO add your handling code here:
+        userController.register();
+        this.dispose();
     }//GEN-LAST:event_btn_daftarActionPerformed
 
     private void jphoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jphoneFocusGained
@@ -350,29 +330,9 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jalamatActionPerformed
 
-    private void jsandiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jsandiFocusGained
-
-    private void jsandiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jsandiFocusLost
-
-    private void jsandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jsandiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jsandiActionPerformed
-
-    private void jsandi2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandi2FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jsandi2FocusGained
-
-    private void jsandi2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandi2FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jsandi2FocusLost
-
-    private void jsandi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jsandi2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jsandi2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        userController.login();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,24 +371,22 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_daftar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jalamat;
-    private javax.swing.JTextField jnama;
+    private javax.swing.JTextField jemail;
     private javax.swing.JTextField jnamalengkap;
     private javax.swing.JTextField jphone;
-    private javax.swing.JTextField jsandi;
-    private javax.swing.JTextField jsandi2;
+    private javax.swing.JPasswordField jsandi;
     // End of variables declaration//GEN-END:variables
 }

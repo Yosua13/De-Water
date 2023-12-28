@@ -10,39 +10,43 @@ package model;
  */
 public class User {
     protected int id;
-    protected String nama_lengkap, nama_pengguna, nomor_hp, alamat, kata_sandi;
+    protected String namaLengkap, email, nomorHP, alamat, kataSandi;
 
-    public User(int id, String nama_lengkap, String nama_pengguna, String nomor_hp, String alamat, String kata_sandi) {
+    public User(int id, String namaLengkap, String email, String nomorHP, String alamat, String kataSandi) {
         this.id = id;
-        this.nama_lengkap = nama_lengkap;
-        this.nama_pengguna = nama_pengguna;
-        this.nomor_hp = nomor_hp;
+        this.namaLengkap = namaLengkap;
+        this.email = email;
+        this.nomorHP = nomorHP;
         this.alamat = alamat;
-        this.kata_sandi = kata_sandi;
+        this.kataSandi = kataSandi;
+    }
+    
+    public User(String currentUser){
+        this.email = email;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getNama_lengkap() {
-        return nama_lengkap;
+    public String getNamaLengkap() {
+        return namaLengkap;
     }
 
-    public String getNama_pengguna() {
-        return nama_pengguna;
+    public String getEmail() {
+        return email;
     }
 
-    public String getNomor_hp() {
-        return nomor_hp;
+    public String getNomorHP() {
+        return nomorHP;
     }
 
     public String getAlamat() {
         return alamat;
     }
 
-    public String getKata_sandi() {
-        return kata_sandi;
+    public String getKataSandi() {
+        return kataSandi;
     }
     
     
