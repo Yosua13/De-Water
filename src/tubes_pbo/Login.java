@@ -49,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         jsandi = new javax.swing.JTextField();
         btn_masuk = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_daftar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,12 +121,12 @@ public class Login extends javax.swing.JFrame {
 
         jLabel6.setText("Belum Punya Akun?");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 204));
-        jButton1.setText("Daftar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_daftar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_daftar.setForeground(new java.awt.Color(0, 0, 204));
+        btn_daftar.setText("Daftar");
+        btn_daftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_daftarActionPerformed(evt);
             }
         });
 
@@ -143,7 +143,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(btn_daftar)))
                 .addGap(0, 95, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -180,7 +180,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jButton1))
+                    .addComponent(btn_daftar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -240,7 +240,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jsandiActionPerformed
 
     private void btn_masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukActionPerformed
-        
+        userController.login();
     }//GEN-LAST:event_btn_masukActionPerformed
 
     private void jemailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jemailFocusGained
@@ -259,9 +259,10 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jsandiFocusLost
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_daftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_daftarActionPerformed
+        this.dispose();
+        userController.showRegistPanel();
+    }//GEN-LAST:event_btn_daftarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,8 +300,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_daftar;
     private javax.swing.JButton btn_masuk;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -63,7 +63,7 @@ public class Register extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jsandi = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btn_masuk = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -159,12 +159,12 @@ public class Register extends javax.swing.JFrame {
 
         jsandi.setText("jPasswordField1");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 204));
-        jButton1.setText("Masuk");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_masuk.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_masuk.setForeground(new java.awt.Color(0, 0, 204));
+        btn_masuk.setText("Masuk");
+        btn_masuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_masukActionPerformed(evt);
             }
         });
 
@@ -196,7 +196,7 @@ public class Register extends javax.swing.JFrame {
                             .addGap(74, 74, 74)
                             .addComponent(jLabel6)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton1)
+                            .addComponent(btn_masuk)
                             .addContainerGap()))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jsandi, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,7 +238,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jButton1))
+                    .addComponent(btn_masuk))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
@@ -330,9 +330,10 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jalamatActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        userController.login();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukActionPerformed
+        userController.showLoginPanel();
+        this.dispose();
+    }//GEN-LAST:event_btn_masukActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,7 +372,7 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_daftar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_masuk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

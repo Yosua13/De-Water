@@ -142,28 +142,30 @@ public class UserController {
                                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
                         Admin currentUser = new Admin(
                                 resultSet.getInt("id"),
-                                resultSet.getString("name"),
+                                resultSet.getString("namaLengkap"),
                                 resultSet.getString("email"),
-                                resultSet.getString("password"),
-                                resultSet.getString("noHp")
+                                resultSet.getString("nomorHP"),
+                                resultSet.getString("alamat"),
+                                resultSet.getString("kataSandi")
                         );
 //                    addUser(currentUser);
-                        showAdminPanel();
-                        up.dispose();
+//                        showAdminPanel();
+//                        up.dispose();
                     } else if ("user".equals(role)) {
 //                    JOptionPane.showConfirmDialog(up, "Login successful.", "Info",
 //                        JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
                         Customer currentUser = new Customer(
                                 resultSet.getInt("id"),
-                                resultSet.getString("name"),
+                                resultSet.getString("namaLengkap"),
                                 resultSet.getString("email"),
-                                resultSet.getString("password"),
-                                resultSet.getString("noHp")
+                                resultSet.getString("nomorHP"),
+                                resultSet.getString("alamat"),
+                                resultSet.getString("kataSandi")
                         );
                         addUser(currentUser);
 
-                        showUserPanel(currentUser);
-                        up.dispose();
+//                        showUserPanel(currentUser);
+//                        up.dispose();
 
                     } else {
                         JOptionPane.showConfirmDialog(login, "Invalid role.", "Error",
@@ -187,6 +189,13 @@ public class UserController {
     }
 
     public void showLoginPanel() {
+        Login login = new Login();
+        login.setVisible(true);
+        login.pack();
+        login.setLocationRelativeTo(null);
+    }
+    
+    public void showKatalogPanelAdmin(){
         Login login = new Login();
         login.setVisible(true);
         login.pack();
