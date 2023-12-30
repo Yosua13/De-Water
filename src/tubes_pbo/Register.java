@@ -184,10 +184,10 @@ public class Register extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel5)
-                                .addComponent(jnamalengkap, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                                .addComponent(jnamalengkap)
                                 .addComponent(jemail)
                                 .addComponent(jLabel14)
-                                .addComponent(jphone)
+                                .addComponent(jphone, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
                                 .addComponent(jalamat)
                                 .addComponent(jLabel15)
                                 .addComponent(jLabel16))
@@ -275,6 +275,7 @@ public class Register extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jnamalengkapFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jnamalengkapFocusGained

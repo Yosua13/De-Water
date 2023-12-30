@@ -46,10 +46,10 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jemail = new javax.swing.JTextField();
-        jsandi = new javax.swing.JTextField();
         btn_masuk = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         btn_daftar = new javax.swing.JButton();
+        jsandi = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,21 +97,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jsandi.setText("masukkan sandi");
-        jsandi.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jsandiFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jsandiFocusLost(evt);
-            }
-        });
-        jsandi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jsandiActionPerformed(evt);
-            }
-        });
-
         btn_masuk.setText("Masuk");
         btn_masuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +114,8 @@ public class Login extends javax.swing.JFrame {
                 btn_daftarActionPerformed(evt);
             }
         });
+
+        jsandi.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -181,7 +168,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(btn_daftar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tubes_pbo/img/D'water.png"))); // NOI18N
@@ -217,6 +204,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
@@ -235,10 +223,6 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jemailActionPerformed
 
-    private void jsandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jsandiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jsandiActionPerformed
-
     private void btn_masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukActionPerformed
         userController.login();
     }//GEN-LAST:event_btn_masukActionPerformed
@@ -247,17 +231,9 @@ public class Login extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jemailFocusGained
 
-    private void jsandiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusGained
-        
-    }//GEN-LAST:event_jsandiFocusGained
-
     private void jemailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jemailFocusLost
 
     }//GEN-LAST:event_jemailFocusLost
-
-    private void jsandiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jsandiFocusLost
-
-    }//GEN-LAST:event_jsandiFocusLost
 
     private void btn_daftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_daftarActionPerformed
         this.dispose();
@@ -311,6 +287,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jemail;
-    private javax.swing.JTextField jsandi;
+    private javax.swing.JPasswordField jsandi;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,6 +21,7 @@ import java.sql.PreparedStatement;
 public class TransaksiController {
 
     private Transaksi trans;
+    private Connection conn;
 
     public TransaksiController(Transaksi trans) {
         this.trans = trans;

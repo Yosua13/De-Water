@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -37,10 +38,10 @@ public class Transaksi extends javax.swing.JFrame {
         
     }
     
-    public JTextField getKode() {
+    public JComboBox getKode() {
         return jjenis_air;
     }
-    public JTextField getNamaProduk() {
+    public JComboBox getNamaProduk() {
         return jnama_produk;
     }
     public JTextField getJenisAir() {
@@ -52,7 +53,7 @@ public class Transaksi extends javax.swing.JFrame {
     public JTextField getJumlah() {
         return jjumlah;
     }
-    public JTextField getMetode() {
+    public JComboBox getMetode() {
         return jmetode;
     }
 
@@ -68,16 +69,14 @@ public class Transaksi extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        nav_profil = new javax.swing.JButton();
+        nav_riwayat = new javax.swing.JButton();
+        nav_transaksi = new javax.swing.JButton();
+        nav_katalog = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jjenis_air = new javax.swing.JTextField();
-        jnama_produk = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jkode_produk = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -86,11 +85,13 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jjumlah = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jmetode = new javax.swing.JTextField();
         btn_tambah = new javax.swing.JButton();
         btn_edit = new javax.swing.JButton();
         btn_hapus = new javax.swing.JButton();
         btn_reset = new javax.swing.JButton();
+        jjenis_air = new javax.swing.JComboBox<>();
+        jnama_produk = new javax.swing.JComboBox<>();
+        jmetode = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabel = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -106,21 +107,45 @@ public class Transaksi extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tubes_pbo/img/D'water Fix (2).png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Katalog");
+        nav_profil.setBackground(new java.awt.Color(57, 167, 255));
+        nav_profil.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_profil.setForeground(new java.awt.Color(255, 255, 255));
+        nav_profil.setText("Ubah Data Diri");
+        nav_profil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_profilActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Riwayat");
+        nav_riwayat.setBackground(new java.awt.Color(57, 167, 255));
+        nav_riwayat.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_riwayat.setForeground(new java.awt.Color(255, 255, 255));
+        nav_riwayat.setText("Riwayat");
+        nav_riwayat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_riwayatActionPerformed(evt);
+            }
+        });
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Transaksi");
+        nav_transaksi.setBackground(new java.awt.Color(57, 167, 255));
+        nav_transaksi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_transaksi.setForeground(new java.awt.Color(255, 255, 255));
+        nav_transaksi.setText("Transaksi");
+        nav_transaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_transaksiActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nama Pengguna");
+        nav_katalog.setBackground(new java.awt.Color(57, 167, 255));
+        nav_katalog.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_katalog.setForeground(new java.awt.Color(255, 255, 255));
+        nav_katalog.setText("Katalog");
+        nav_katalog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_katalogActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -129,30 +154,27 @@ public class Transaksi extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(53, 53, 53)
-                .addComponent(jLabel2)
+                .addGap(40, 40, 40)
+                .addComponent(nav_katalog)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(nav_transaksi)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 613, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(41, 41, 41))
+                .addComponent(nav_riwayat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nav_profil)
+                .addGap(48, 48, 48))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))))
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nav_katalog)
+                        .addComponent(nav_transaksi)
+                        .addComponent(nav_riwayat)
+                        .addComponent(nav_profil))
+                    .addComponent(jLabel1))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -166,20 +188,6 @@ public class Transaksi extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Jenis Air");
-
-        jjenis_air.setText("jenis air");
-        jjenis_air.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jjenis_airActionPerformed(evt);
-            }
-        });
-
-        jnama_produk.setText("nama produk");
-        jnama_produk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jnama_produkActionPerformed(evt);
-            }
-        });
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setText("Nama Produk");
@@ -216,13 +224,6 @@ public class Transaksi extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setText("Metode Pengambilan");
-
-        jmetode.setText("pilih");
-        jmetode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmetodeActionPerformed(evt);
-            }
-        });
 
         btn_tambah.setBackground(new java.awt.Color(57, 167, 255));
         btn_tambah.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -264,26 +265,34 @@ public class Transaksi extends javax.swing.JFrame {
             }
         });
 
+        jjenis_air.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jjenis_air.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jjenis_airActionPerformed(evt);
+            }
+        });
+
+        jnama_produk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jmetode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(jjenis_air, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jnama_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jkode_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jkode_produk, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11)
-                    .addComponent(jharga, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jharga, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
                     .addComponent(jLabel12)
-                    .addComponent(jjumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jjumlah, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
                     .addComponent(jLabel13)
-                    .addComponent(jmetode, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btn_tambah)
@@ -292,7 +301,10 @@ public class Transaksi extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btn_hapus)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_reset)))
+                        .addComponent(btn_reset))
+                    .addComponent(jjenis_air, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jnama_produk, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jmetode, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -308,7 +320,7 @@ public class Transaksi extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jnama_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jkode_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -439,14 +451,6 @@ public class Transaksi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jjenis_airActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jjenis_airActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jjenis_airActionPerformed
-
-    private void jnama_produkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnama_produkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jnama_produkActionPerformed
-
     private void jkode_produkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jkode_produkActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jkode_produkActionPerformed
@@ -458,10 +462,6 @@ public class Transaksi extends javax.swing.JFrame {
     private void jjumlahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jjumlahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jjumlahActionPerformed
-
-    private void jmetodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmetodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmetodeActionPerformed
 
     private void btn_tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahActionPerformed
 
@@ -501,6 +501,26 @@ public class Transaksi extends javax.swing.JFrame {
             jmetode.setText(model.getValueAt(i, 5).toString());
         }
     }//GEN-LAST:event_tabelMouseClicked
+
+    private void nav_profilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_profilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nav_profilActionPerformed
+
+    private void nav_riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_riwayatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nav_riwayatActionPerformed
+
+    private void nav_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_transaksiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nav_transaksiActionPerformed
+
+    private void nav_katalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_katalogActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nav_katalogActionPerformed
+
+    private void jjenis_airActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jjenis_airActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jjenis_airActionPerformed
 
 
     /**
@@ -552,10 +572,6 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -566,11 +582,15 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jharga;
-    private javax.swing.JTextField jjenis_air;
+    private javax.swing.JComboBox<String> jjenis_air;
     private javax.swing.JTextField jjumlah;
     private javax.swing.JTextField jkode_produk;
-    private javax.swing.JTextField jmetode;
-    private javax.swing.JTextField jnama_produk;
+    private javax.swing.JComboBox<String> jmetode;
+    private javax.swing.JComboBox<String> jnama_produk;
+    private javax.swing.JButton nav_katalog;
+    private javax.swing.JButton nav_profil;
+    private javax.swing.JButton nav_riwayat;
+    private javax.swing.JButton nav_transaksi;
     private javax.swing.JTable tabel;
     // End of variables declaration//GEN-END:variables
 
