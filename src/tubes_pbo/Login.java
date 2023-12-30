@@ -82,7 +82,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setText("Kata Sandi");
 
-        jemail.setText("masukkan email");
         jemail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jemailFocusGained(evt);
@@ -114,8 +113,6 @@ public class Login extends javax.swing.JFrame {
                 btn_daftarActionPerformed(evt);
             }
         });
-
-        jsandi.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -237,7 +234,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btn_daftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_daftarActionPerformed
         this.dispose();
-        userController.showRegistPanel();
+        userController.tampilkanRegistPanel();
     }//GEN-LAST:event_btn_daftarActionPerformed
 
     /**

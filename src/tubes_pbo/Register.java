@@ -82,7 +82,6 @@ public class Register extends javax.swing.JFrame {
 
         jLabel5.setText("Email");
 
-        jnamalengkap.setText("masukkan nama lengkap");
         jnamalengkap.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jnamalengkapFocusGained(evt);
@@ -97,7 +96,6 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        jemail.setText("masukkan email");
         jemail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jemailFocusGained(evt);
@@ -123,7 +121,6 @@ public class Register extends javax.swing.JFrame {
 
         jLabel14.setText("Nomor Handphone");
 
-        jphone.setText("masukkan nomor handphone");
         jphone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jphoneFocusGained(evt);
@@ -138,7 +135,6 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        jalamat.setText("masukkan alamat");
         jalamat.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jalamatFocusGained(evt);
@@ -156,8 +152,6 @@ public class Register extends javax.swing.JFrame {
         jLabel15.setText("Alamat");
 
         jLabel16.setText("Kata Sandi");
-
-        jsandi.setText("jPasswordField1");
 
         btn_masuk.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_masuk.setForeground(new java.awt.Color(0, 0, 204));
@@ -332,7 +326,7 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_jalamatActionPerformed
 
     private void btn_masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukActionPerformed
-        userController.showLoginPanel();
+        userController.tampilkanLoginPanel();
         this.dispose();
     }//GEN-LAST:event_btn_masukActionPerformed
 

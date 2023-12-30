@@ -172,9 +172,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jemail">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="masukkan email"/>
-              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jemailFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jemailFocusLost"/>
@@ -209,9 +206,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JPasswordField" name="jsandi">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>

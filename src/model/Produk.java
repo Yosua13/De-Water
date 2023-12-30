@@ -9,41 +9,34 @@ package model;
  * @author reyyo
  */
 public class Produk {
-    protected String jenis_air, nama_produk, kode_produk, metode_pengambilan;
-    protected int harga, jumlah;
+    protected String jenis_air, nama_produk, kode_produk, stok;
+    protected int harga;
 
-    public Produk(String jenis_air, String nama_produk, String kode_produk, String metode_pengambilan, int harga, int jumlah) {
+    public Produk(String jenis_air, String nama_produk, String kode_produk, int harga, String stok) {
         this.jenis_air = jenis_air;
         this.nama_produk = nama_produk;
         this.kode_produk = kode_produk;
-        this.metode_pengambilan = metode_pengambilan;
         this.harga = harga;
-        this.jumlah = jumlah;
+        this.stok = stok;
     }
 
-    public String getJenis_air() {
+    public String getJenisAir() {
         return jenis_air;
     }
 
-    public String getNama_produk() {
+    public String getNamaProduk() {
         return nama_produk;
     }
 
-    public String getKode_produk() {
+    public String getKodeProduk() {
         return kode_produk;
-    }
-
-    public String getMetode_pengambilan() {
-        return metode_pengambilan;
     }
 
     public int getHarga() {
         return harga;
     }
-
-    public int getJumlah() {
-        return jumlah;
+    
+    public String getStok(){
+        return stok;
     }
-    
-    
 }

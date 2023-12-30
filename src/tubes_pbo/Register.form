@@ -184,9 +184,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jnamalengkap">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="masukkan nama lengkap"/>
-              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jnamalengkapFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jnamalengkapFocusLost"/>
@@ -194,9 +191,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jemail">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="masukkan email"/>
-              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jemailFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jemailFocusLost"/>
@@ -222,9 +216,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jphone">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="masukkan nomor handphone"/>
-              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jphoneFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jphoneFocusLost"/>
@@ -232,9 +223,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jalamat">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="masukkan alamat"/>
-              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jalamatFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jalamatFocusLost"/>
@@ -252,9 +240,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="jsandi">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btn_masuk">
               <Properties>

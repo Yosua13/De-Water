@@ -14,7 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Admin;
 import model.Customer;
-import tubes_pbo.EditProfil;
 import tubes_pbo.Katalog;
 import tubes_pbo.KatalogAdmin;
 import tubes_pbo.Login;
@@ -33,7 +32,6 @@ public class UserController {
     private KatalogAdmin katalogAdmin;
     private Customer customer;
     private Customer currentUser;
-    private EditProfil edit;
 
     protected final ArrayList<Customer> userList = new ArrayList<>();
 
@@ -43,7 +41,7 @@ public class UserController {
         this.katalog = katalog;
         KoneksiDB koneksiDB = new KoneksiDB();
         koneksiDB.bukaKoneksi();
-        this.conn = (Connection) koneksiDB.getConn();
+        this.conn = koneksiDB.getConn();
     }
 
     public void addUser(Customer user) {
@@ -102,11 +100,11 @@ public class UserController {
                 if (rowsInserted > 0) {
                     JOptionPane.showConfirmDialog(register, "New account has been created successfully!", "Info",
                             JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                    showLoginPanel();
+                    tampilkanLoginPanel();
                 } else {
                     JOptionPane.showConfirmDialog(register, "Gagal menambahkan akun.", "Error",
                             JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-                    showRegistPanel();
+                    tampilkanRegistPanel();
                 }
                 st.execute(sql);
             }
@@ -153,7 +151,7 @@ public class UserController {
                                 resultSet.getString("kataSandi")
                         );
 //                    addUser(currentUser);
-                        showKatalogAdminPanel();
+                        tampilkanKatalogAdminPanel();
                         katalog.dispose();
                     } else if ("user".equals(role)) {
 //                    JOptionPane.showConfirmDialog(up, "Login successful.", "Info",
@@ -167,7 +165,7 @@ public class UserController {
                                 resultSet.getString("kataSandi")
                         );
                         addUser(currentUser);
-                        showKatalogPanel(currentUser);
+                        tampilkanKatalogPanel(currentUser);
                         katalog.dispose();
                     } else {
                         JOptionPane.showConfirmDialog(login, "Invalid role.", "Error",
@@ -183,7 +181,7 @@ public class UserController {
         }
     }
 
-    public void showMessage(String message) {
+    public void tampilkanPesan(String message) {
         JOptionPane.showMessageDialog(null, message);
     }
 
@@ -199,9 +197,9 @@ public class UserController {
             int affectedRows = st.executeUpdate();
 
             if (affectedRows > 0) {
-                showMessage("Profil berhasil diupdate");
+                tampilkanPesan("Profil berhasil diupdate");
             } else {
-                showMessage("Gagal mengupdate profil");
+                tampilkanPesan("Gagal mengupdate profil");
             }
         } catch (SQLException e) {
             System.out.println("Error!" + e.getMessage());
@@ -209,28 +207,28 @@ public class UserController {
 
     }
 
-    public void showRegistPanel() {
+    public void tampilkanRegistPanel() {
         Register register = new Register();
         register.setVisible(true);
         register.pack();
         register.setLocationRelativeTo(null);
     }
 
-    public void showLoginPanel() {
+    public void tampilkanLoginPanel() {
         Login login = new Login();
         login.setVisible(true);
         login.pack();
         login.setLocationRelativeTo(null);
     }
 
-    public void showKatalogPanel(Customer currentUser) {
+    public void tampilkanKatalogPanel(Customer currentUser) {
         Katalog katalog = new Katalog();
         katalog.setVisible(true);
         katalog.pack();
         katalog.setLocationRelativeTo(null);
     }
 
-    public void showKatalogAdminPanel() {
+    public void tampilkanKatalogAdminPanel() {
         KatalogAdmin katalogAdmin = new KatalogAdmin();
         katalogAdmin.setVisible(true);
         katalogAdmin.pack();

@@ -29,9 +29,7 @@ public class Riwayat extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        nav_profil = new javax.swing.JButton();
         nav_riwayat = new javax.swing.JButton();
-        nav_transaksi = new javax.swing.JButton();
         nav_katalog = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -43,16 +41,6 @@ public class Riwayat extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tubes_pbo/img/D'water Fix (2).png"))); // NOI18N
 
-        nav_profil.setBackground(new java.awt.Color(57, 167, 255));
-        nav_profil.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        nav_profil.setForeground(new java.awt.Color(255, 255, 255));
-        nav_profil.setText("Ubah Data Diri");
-        nav_profil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nav_profilActionPerformed(evt);
-            }
-        });
-
         nav_riwayat.setBackground(new java.awt.Color(57, 167, 255));
         nav_riwayat.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         nav_riwayat.setForeground(new java.awt.Color(255, 255, 255));
@@ -60,16 +48,6 @@ public class Riwayat extends javax.swing.JFrame {
         nav_riwayat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nav_riwayatActionPerformed(evt);
-            }
-        });
-
-        nav_transaksi.setBackground(new java.awt.Color(57, 167, 255));
-        nav_transaksi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        nav_transaksi.setForeground(new java.awt.Color(255, 255, 255));
-        nav_transaksi.setText("Transaksi");
-        nav_transaksi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nav_transaksiActionPerformed(evt);
             }
         });
 
@@ -92,13 +70,9 @@ public class Riwayat extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(52, 52, 52)
                 .addComponent(nav_katalog)
-                .addGap(18, 18, 18)
-                .addComponent(nav_transaksi)
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
                 .addComponent(nav_riwayat)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nav_profil)
-                .addGap(54, 54, 54))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,9 +81,7 @@ public class Riwayat extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(nav_katalog)
-                        .addComponent(nav_transaksi)
-                        .addComponent(nav_riwayat)
-                        .addComponent(nav_profil))
+                        .addComponent(nav_riwayat))
                     .addComponent(jLabel11))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -171,17 +143,9 @@ public class Riwayat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nav_profilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_profilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nav_profilActionPerformed
-
     private void nav_riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_riwayatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nav_riwayatActionPerformed
-
-    private void nav_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_transaksiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nav_transaksiActionPerformed
 
     private void nav_katalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_katalogActionPerformed
         // TODO add your handling code here:
@@ -230,8 +194,6 @@ public class Riwayat extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     private javax.swing.JButton nav_katalog;
-    private javax.swing.JButton nav_profil;
     private javax.swing.JButton nav_riwayat;
-    private javax.swing.JButton nav_transaksi;
     // End of variables declaration//GEN-END:variables
 }
