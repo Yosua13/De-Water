@@ -5,6 +5,7 @@
 package tubes_pbo;
 
 import controller.ProdukController;
+import controller.TransaksiController;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -17,14 +18,16 @@ import javax.swing.JTextField;
 public class KatalogAdmin extends javax.swing.JFrame {
 
     private ProdukController produkController;
+    private TransaksiController trans;
 
     /**
      * Creates new form KatalogAdmin
      */
     public KatalogAdmin() {
         initComponents();
-        this.produkController = new ProdukController(this);
+        this.produkController = new ProdukController(this, null);
         produkController.tampilkanProduk();
+        this.trans = new TransaksiController(null, null);
     }
 
     public JComboBox getJenisAir() {
@@ -60,6 +63,7 @@ public class KatalogAdmin extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         nav_riwayat = new javax.swing.JButton();
         nav_katalog = new javax.swing.JButton();
+        nav_keluar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -107,6 +111,16 @@ public class KatalogAdmin extends javax.swing.JFrame {
             }
         });
 
+        nav_keluar.setBackground(new java.awt.Color(57, 167, 255));
+        nav_keluar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_keluar.setForeground(new java.awt.Color(255, 255, 255));
+        nav_keluar.setText("Keluar");
+        nav_keluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_keluarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -116,8 +130,10 @@ public class KatalogAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(29, 29, 29)
                 .addComponent(nav_katalog)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(nav_riwayat)
+                .addGap(18, 18, 18)
+                .addComponent(nav_keluar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -127,7 +143,8 @@ public class KatalogAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(nav_katalog)
-                        .addComponent(nav_riwayat))
+                        .addComponent(nav_riwayat)
+                        .addComponent(nav_keluar))
                     .addComponent(jLabel11))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -333,7 +350,8 @@ public class KatalogAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_hapusActionPerformed
 
     private void nav_riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_riwayatActionPerformed
-        // TODO add your handling code here:
+        trans.tampilkanRiwayatPanel();
+        this.dispose();
     }//GEN-LAST:event_nav_riwayatActionPerformed
 
     private void nav_katalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_katalogActionPerformed
@@ -343,6 +361,10 @@ public class KatalogAdmin extends javax.swing.JFrame {
     private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_resetActionPerformed
+
+    private void nav_keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_keluarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_nav_keluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,6 +424,7 @@ public class KatalogAdmin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jstok;
     private javax.swing.JTable jtable;
     private javax.swing.JButton nav_katalog;
+    private javax.swing.JButton nav_keluar;
     private javax.swing.JButton nav_riwayat;
     // End of variables declaration//GEN-END:variables
 }

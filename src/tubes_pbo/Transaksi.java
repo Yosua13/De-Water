@@ -32,7 +32,7 @@ public class Transaksi extends javax.swing.JFrame {
     PreparedStatement pst = null;
 
     public Transaksi() {
-        ctrl = new TransaksiController(this);
+        ctrl = new TransaksiController(this, null);
         initComponents();
         ctrl.showNama();
         ctrl.tampilkanTransaksi();
@@ -119,6 +119,7 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         nav_transaksi = new javax.swing.JButton();
         nav_katalog = new javax.swing.JButton();
+        nav_keluar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -176,6 +177,16 @@ public class Transaksi extends javax.swing.JFrame {
             }
         });
 
+        nav_keluar.setBackground(new java.awt.Color(57, 167, 255));
+        nav_keluar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_keluar.setForeground(new java.awt.Color(255, 255, 255));
+        nav_keluar.setText("Keluar");
+        nav_keluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_keluarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -187,6 +198,8 @@ public class Transaksi extends javax.swing.JFrame {
                 .addComponent(nav_katalog)
                 .addGap(18, 18, 18)
                 .addComponent(nav_transaksi)
+                .addGap(18, 18, 18)
+                .addComponent(nav_keluar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -196,7 +209,8 @@ public class Transaksi extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(nav_katalog)
-                        .addComponent(nav_transaksi))
+                        .addComponent(nav_transaksi)
+                        .addComponent(nav_keluar))
                     .addComponent(jLabel1))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -458,7 +472,8 @@ public class Transaksi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_batalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_batalActionPerformed
-        ctrl.batakan();
+        ctrl.batalan();
+        this.dispose();
     }//GEN-LAST:event_btn_batalActionPerformed
 
     private void jtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtotalActionPerformed
@@ -500,7 +515,8 @@ public class Transaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_nav_transaksiActionPerformed
 
     private void nav_katalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_katalogActionPerformed
-        // TODO add your handling code here:
+        ctrl.tampilkanKatalogPanel();
+        this.dispose();
     }//GEN-LAST:event_nav_katalogActionPerformed
 
     private void jnama_produkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnama_produkActionPerformed
@@ -534,6 +550,10 @@ public class Transaksi extends javax.swing.JFrame {
     private void btn_pesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesanActionPerformed
         ctrl.tambah();
     }//GEN-LAST:event_btn_pesanActionPerformed
+
+    private void nav_keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_keluarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_nav_keluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -604,6 +624,7 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JTable jtabel;
     private javax.swing.JTextField jtotal;
     private javax.swing.JButton nav_katalog;
+    private javax.swing.JButton nav_keluar;
     private javax.swing.JButton nav_transaksi;
     // End of variables declaration//GEN-END:variables
 
@@ -624,5 +645,9 @@ public class Transaksi extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Transaksi.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    private void tampilkanKatalogPanel() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

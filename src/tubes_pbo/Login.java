@@ -222,6 +222,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btn_masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukActionPerformed
         userController.login();
+        this.dispose();
     }//GEN-LAST:event_btn_masukActionPerformed
 
     private void jemailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jemailFocusGained

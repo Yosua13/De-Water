@@ -18,6 +18,7 @@ import tubes_pbo.Katalog;
 import tubes_pbo.KatalogAdmin;
 import tubes_pbo.Login;
 import tubes_pbo.Register;
+import tubes_pbo.Transaksi;
 
 /**
  *
@@ -233,6 +234,13 @@ public class UserController {
         katalogAdmin.setVisible(true);
         katalogAdmin.pack();
         katalogAdmin.setLocation(null);
+    }
+    
+    public void tampilkanTransaksiPanel() {
+        Transaksi tr = new Transaksi();
+        tr.setVisible(true);
+        tr.pack();
+        tr.setLocation(null);
     }
 
     // Method to check if an email already exists in the database

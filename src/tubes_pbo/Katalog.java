@@ -41,6 +41,7 @@ public class Katalog extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         nav_katalog = new javax.swing.JButton();
         nav_transaksi = new javax.swing.JButton();
+        nav_keluar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -111,11 +112,6 @@ public class Katalog extends javax.swing.JFrame {
         nav_katalog.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         nav_katalog.setForeground(new java.awt.Color(255, 255, 255));
         nav_katalog.setText("Katalog");
-        nav_katalog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nav_katalogActionPerformed(evt);
-            }
-        });
 
         nav_transaksi.setBackground(new java.awt.Color(57, 167, 255));
         nav_transaksi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -124,6 +120,16 @@ public class Katalog extends javax.swing.JFrame {
         nav_transaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nav_transaksiActionPerformed(evt);
+            }
+        });
+
+        nav_keluar.setBackground(new java.awt.Color(57, 167, 255));
+        nav_keluar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_keluar.setForeground(new java.awt.Color(255, 255, 255));
+        nav_keluar.setText("Keluar");
+        nav_keluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_keluarActionPerformed(evt);
             }
         });
 
@@ -138,6 +144,8 @@ public class Katalog extends javax.swing.JFrame {
                 .addComponent(nav_katalog)
                 .addGap(18, 18, 18)
                 .addComponent(nav_transaksi)
+                .addGap(18, 18, 18)
+                .addComponent(nav_keluar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -147,7 +155,8 @@ public class Katalog extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(nav_katalog)
-                        .addComponent(nav_transaksi))
+                        .addComponent(nav_transaksi)
+                        .addComponent(nav_keluar))
                     .addComponent(jLabel11))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -171,6 +180,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setText("Beli");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -225,6 +239,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Beli");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -278,6 +297,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton6.setText("Beli");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -332,6 +356,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton7.setText("Beli");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -385,6 +414,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setText("Beli");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -441,6 +475,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setText("Beli");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -494,6 +533,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setText("Beli");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -547,6 +591,11 @@ public class Katalog extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton8.setText("Beli");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -651,13 +700,54 @@ public class Katalog extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nav_katalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_katalogActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nav_katalogActionPerformed
-
     private void nav_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_transaksiActionPerformed
-        // TODO add your handling code here:
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
     }//GEN-LAST:event_nav_transaksiActionPerformed
+
+    private void nav_keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_keluarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_nav_keluarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        userController.tampilkanTransaksiPanel();
+        this.dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -756,6 +846,7 @@ public class Katalog extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JButton nav_katalog;
+    private javax.swing.JButton nav_keluar;
     private javax.swing.JButton nav_transaksi;
     // End of variables declaration//GEN-END:variables
 }

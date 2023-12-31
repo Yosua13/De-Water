@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.*;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import tubes_pbo.Katalog;
 
 /**
  *
@@ -23,9 +24,11 @@ public class ProdukController {
     private Connection conn;
     private Produk produk;
     private KatalogAdmin katalogAdmin;
+    private Katalog katalog;
 
-    public ProdukController(KatalogAdmin katalogAdmin) {
+    public ProdukController(KatalogAdmin katalogAdmin, Katalog katalog) {
         this.katalogAdmin = katalogAdmin;
+        this.katalog = katalog;
         KoneksiDB koneksiDB = new KoneksiDB();
         koneksiDB.bukaKoneksi();
         this.conn = koneksiDB.getConn();

@@ -4,17 +4,37 @@
  */
 package tubes_pbo;
 
+import controller.ProdukController;
+import controller.TransaksiController;
+import controller.UserController;
+import javax.swing.JTable;
+import model.Customer;
+
 /**
  *
  * @author reyyo
  */
 public class Riwayat extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Riwayat
-     */
+    private TransaksiController trans;
+    private UserController ctrl;
+    public Customer customer;
+    private ProdukController produkController;
+
     public Riwayat() {
         initComponents();
+        trans = new TransaksiController(null, this);
+        this.produkController = new ProdukController(null, null);
+    }
+
+    public Riwayat(Customer customer) {
+        this.customer = customer;
+        initComponents();
+        trans = new TransaksiController(null, this);
+    }
+
+    public JTable getTable() {
+        return jTable;
     }
 
     /**
@@ -31,6 +51,7 @@ public class Riwayat extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         nav_riwayat = new javax.swing.JButton();
         nav_katalog = new javax.swing.JButton();
+        nav_keluar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
@@ -61,6 +82,16 @@ public class Riwayat extends javax.swing.JFrame {
             }
         });
 
+        nav_keluar.setBackground(new java.awt.Color(57, 167, 255));
+        nav_keluar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nav_keluar.setForeground(new java.awt.Color(255, 255, 255));
+        nav_keluar.setText("Keluar");
+        nav_keluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nav_keluarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -70,8 +101,10 @@ public class Riwayat extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(52, 52, 52)
                 .addComponent(nav_katalog)
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
                 .addComponent(nav_riwayat)
+                .addGap(18, 18, 18)
+                .addComponent(nav_keluar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -81,7 +114,8 @@ public class Riwayat extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(nav_katalog)
-                        .addComponent(nav_riwayat))
+                        .addComponent(nav_riwayat)
+                        .addComponent(nav_keluar))
                     .addComponent(jLabel11))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -104,6 +138,11 @@ public class Riwayat extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -148,8 +187,17 @@ public class Riwayat extends javax.swing.JFrame {
     }//GEN-LAST:event_nav_riwayatActionPerformed
 
     private void nav_katalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_katalogActionPerformed
-        // TODO add your handling code here:
+        produkController.tampilkanProduk();
+        this.dispose();
     }//GEN-LAST:event_nav_katalogActionPerformed
+
+    private void nav_keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nav_keluarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_nav_keluarActionPerformed
+
+    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+        trans.tampilkanTransaksiAdmin();
+    }//GEN-LAST:event_jTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,6 +242,7 @@ public class Riwayat extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     private javax.swing.JButton nav_katalog;
+    private javax.swing.JButton nav_keluar;
     private javax.swing.JButton nav_riwayat;
     // End of variables declaration//GEN-END:variables
 }

@@ -78,8 +78,10 @@
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="nav_katalog" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="nav_riwayat" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="nav_keluar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -92,6 +94,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="nav_katalog" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="nav_riwayat" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nav_keluar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -140,6 +143,23 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nav_katalogActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="nav_keluar">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="a7" red="39" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Keluar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nav_keluarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -200,6 +220,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

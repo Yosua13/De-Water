@@ -14,9 +14,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import tubes_pbo.Transaksi;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
 import javax.swing.table.DefaultTableModel;
 import model.ModelTransaksi;
 import model.Produk;
+import tubes_pbo.Katalog;
+import tubes_pbo.Riwayat;
 
 /**
  *
@@ -27,9 +30,12 @@ public class TransaksiController {
     private Transaksi trans;
     private Connection conn;
     private ModelTransaksi mtrans;
+    private Katalog katalog;
+    private Riwayat riwayat;
 
-    public TransaksiController(Transaksi trans) {
+    public TransaksiController(Transaksi trans, Riwayat riwayat) {
         this.trans = trans;
+        this.riwayat = riwayat;
         KoneksiDB koneksiDB = new KoneksiDB();
         koneksiDB.bukaKoneksi();
         this.conn = koneksiDB.getConn();
@@ -59,7 +65,6 @@ public class TransaksiController {
 
                 model.addRow(new Object[]{
                     no++,
-                    
                     res.getString("nama_pembeli"),
                     res.getString("nomor_HP"),
                     res.getString("alamat"),
@@ -77,6 +82,52 @@ public class TransaksiController {
             System.out.println("Error : " + e.getMessage());
         }
     }
+    
+    
+//    public void tampilkanTransaksiAdmin() {
+//        DefaultTableModel model = new DefaultTableModel();
+//        model.addColumn("No");
+//        model.addColumn("Tanggal");
+//        model.addColumn("Nama Pembeli");
+//        model.addColumn("Nomor HP");
+//        model.addColumn("Alamat");
+//        model.addColumn("Nama Produk");
+//        model.addColumn("Jenis Air");
+//        model.addColumn("Kode Produk");
+//        model.addColumn("Harga");
+//        model.addColumn("Jumlah");
+//        model.addColumn("Total");
+//        model.addColumn("Metode Pengambilan");
+//
+//        try {
+//            int no = 1;
+//            String sql = "SELECT * FROM transaksi";
+//            java.sql.Statement stm = conn.createStatement();
+//            java.sql.ResultSet res = stm.executeQuery(sql);
+//            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//
+//            while (res.next()) {
+//
+//                model.addRow(new Object[]{
+//                    no++,
+//                    dateFormat.format(res.getTimestamp("date")),
+//                    res.getString("nama_pembeli"),
+//                    res.getString("nomor_HP"),
+//                    res.getString("alamat"),
+//                    res.getString("nama_produk"),
+//                    res.getString("jenis_air"),
+//                    res.getString("kode_produk"),
+//                    res.getInt("harga"),
+//                    res.getInt("jumlah"),
+//                    res.getInt("total"),
+//                    res.getString("metode_pengambilan")
+//                });
+//            }
+//            trans.getTable().setModel(model);
+//        } catch (SQLException e) {
+//            System.out.println("Error : " + e.getMessage());
+//        }
+//    }
 
     public void showNama() {
         DefaultTableModel model_prdk = new DefaultTableModel();
@@ -167,32 +218,50 @@ public class TransaksiController {
         }
     }
 
-    public void batakan() {
-    // Pemeriksaan keberadaan kode produk sebelum menghapus
-    String kodeProdukHapus = trans.getKodeProduk().getText();
-    
-    if (kodeProdukHapus.isEmpty()) {
-        JOptionPane.showConfirmDialog(trans, "Masukkan kode produk untuk menghapus.", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+    public void batalan() {
+        // Pemeriksaan keberadaan kode produk sebelum menghapus
+        String kodeProdukHapus = trans.getKodeProduk().getText();
 
-    String sql = "DELETE FROM transaksi WHERE kode_produk = ?";
-
-    try (PreparedStatement statement = conn.prepareStatement(sql)) {
-        statement.setString(1, kodeProdukHapus);
-
-        int rowsDeleted = statement.executeUpdate();
-        if (rowsDeleted > 0) {
-            JOptionPane.showConfirmDialog(trans, "Transaksi berhasil dihapus.", "Info", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
-            // Menampilkan data setelah penghapusan (jika diperlukan)
-            // tampilkanProduk();
-        } else {
-            JOptionPane.showConfirmDialog(trans, "Tidak ada transaksi dengan kode produk tersebut.", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+        if (kodeProdukHapus.isEmpty()) {
+            JOptionPane.showConfirmDialog(trans, "Masukkan kode produk untuk menghapus.", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+            return;
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
-        JOptionPane.showConfirmDialog(trans, "Terjadi kesalahan saat menghapus transaksi: " + e.getMessage(), "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-    }
-}
 
+        String sql = "DELETE FROM transaksi WHERE kode_produk = ?";
+
+        try (PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setString(1, kodeProdukHapus);
+
+            int rowsDeleted = statement.executeUpdate();
+            if (rowsDeleted > 0) {
+                JOptionPane.showConfirmDialog(trans, "Transaksi berhasil dihapus.", "Info", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
+                // Menampilkan data setelah penghapusan (jika diperlukan)
+                // tampilkanProduk();
+            } else {
+                JOptionPane.showConfirmDialog(trans, "Tidak ada transaksi dengan kode produk tersebut.", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+            }
+            tampilkanKatalogPanel();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showConfirmDialog(trans, "Terjadi kesalahan saat menghapus transaksi: " + e.getMessage(), "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void tampilkanKatalogPanel() {
+        Katalog kt = new Katalog();
+        kt.setVisible(true);
+        kt.pack();
+        kt.setLocationRelativeTo(null);
+    }
+    
+    public void tampilkanRiwayatPanel() {
+        Riwayat rt = new Riwayat();
+        rt.setVisible(true);
+        rt.pack();
+        rt.setLocationRelativeTo(null);
+    }
+
+    
+    
 }
